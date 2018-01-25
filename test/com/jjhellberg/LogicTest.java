@@ -9,6 +9,14 @@ class LogicTest {
 
     @Test
     public void testExample() {
-        assertEquals(5, logic.getCycles(new int[]{0,2,7,0}));
+        int[] testInput = new int[]{0,2,7,0};
+        assertEquals(5, logic.getCycles(testInput).getKey().intValue());
+    }
+
+    @Test
+    public void testExample2() {
+        int[] testInput = new int[]{0,2,7,0};
+        logic.getCycles(testInput);
+        assertEquals(4, logic.getCycles(testInput).getKey().intValue());
     }
 }

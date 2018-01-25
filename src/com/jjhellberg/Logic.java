@@ -1,11 +1,11 @@
 package com.jjhellberg;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javafx.util.Pair;
+
+import java.util.*;
 
 public class Logic {
-    public int getCycles(int[] banks) {
+    public Pair<Integer, int[]> getCycles(int[] banks) {
         List<int[]> oldBanks = new ArrayList<>();
         int topBank;
         boolean matchFound = false;
@@ -27,7 +27,7 @@ public class Logic {
 
         } while (!matchFound);
 
-        return redistributions;
+        return new Pair<Integer, int[]>(redistributions, banks);
     }
 
 
