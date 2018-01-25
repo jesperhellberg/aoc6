@@ -27,11 +27,11 @@ public class Logic {
 
         } while (!matchFound);
 
-        return new Pair<Integer, int[]>(redistributions, banks);
+        return new Pair<>(redistributions, banks);
     }
 
 
-    private int[] redistribute(int[] banks, int topBank) {
+    private void redistribute(int[] banks, int topBank) {
         int size = banks.length;
         int val = banks[topBank];
         banks[topBank] = 0;
@@ -39,7 +39,6 @@ public class Logic {
         for(int i = topBank + 1; i <= topBank + val; i++) {
             banks[i % size]++;
         }
-        return banks;
     }
 
 
